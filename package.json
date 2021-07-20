@@ -1,0 +1,30 @@
+{
+  "name": "employee-id-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celiajpennington/employee-id-cards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celiajpennington/employee-id-cards/issues"
+  },
+  "homepage": "https://github.com/celiajpennington/employee-id-cards#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
