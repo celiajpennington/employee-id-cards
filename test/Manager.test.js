@@ -22,6 +22,6 @@ expect(e.getRole()).toBe(testValue);
 //test to see if getOfficeNumber() returns number
 test("Can getOfficeNumber () return the office number", () => {
 const testValue = 5;
-const e = new Engineer("Foo", 1, "test@test.com", testValue);
+const e = new Manager("Foo", 1, "test@test.com", testValue);
 expect(e.getOfficeNumber()).toBe(testValue);
 });
