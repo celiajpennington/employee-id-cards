@@ -7,7 +7,7 @@ const Employee = require("./lib/Employee")
 const Engineer = require('./lib/Engineer');
 const Intern = require("./lib/Intern");
 const Manager = require('./lib/Manager');
-const generateHTML = require("../employee-id-cards/utils/generateHTML")
+const generateHTML = require("./utils/generateHTML")
     //determine current directory and find path to the output folder 
 
 

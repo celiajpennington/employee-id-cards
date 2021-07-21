@@ -1,4 +1,4 @@
-const generateHTML = (team) => {
+const createTeamCards = (team) => {
 
     const createManager = function(manager) {
         return `<div class="card" style="width: 18rem;">
@@ -46,16 +46,16 @@ const generateHTML = (team) => {
     const html = [];
     html.push(team
         .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
+        .map(manager => createManager(manager))
     );
     html.push(team
         .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
+        .map(engineer => createEngineer(engineer))
         .join("")
     );
     html.push(team
         .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
+        .map(intern => createIntern(intern))
         .join("")
     );
     return html.join("");
