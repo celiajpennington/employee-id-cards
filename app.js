@@ -10,8 +10,8 @@ const Manager = require('./lib/Manager');
 const generateHTML = require("./utils/generateHTML")
     //determine current directory and find path to the output folder 
 
-
 const team = [];
+
 
 function newManager() {
     inquirer
@@ -104,7 +104,7 @@ function newEmployee() {
             let engineer = new Engineer(employeeName, employeeId, email, github)
             team.push(engineer);
         }
-        if (response.add == true) { newEmployee(); } else { createHTML(); }
+        if (response.add == true) { newEmployee(); } else { generateHTML(); }
     })
 }
 const createHTML = () => {
