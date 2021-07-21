@@ -7,7 +7,7 @@ const Employee = require("./lib/Employee")
 const Engineer = require('./lib/Engineer');
 const Intern = require("./lib/Intern");
 const Manager = require('./lib/Manager');
-const generateHTML = require("./utils/gengit commiterateHTML")
+const generateHTML = require("../employee-id-cards/utils/generateHTML")
     //determine current directory and find path to the output folder 
 
 
@@ -107,7 +107,6 @@ function newEmployee() {
         if (response.add == true) { newEmployee(); } else { createHTML(); }
     })
 }
-
 const createHTML = () => {
     fs.writeFile("test.html", generateHTML(team), (err) => {
         err ? console.log("This has not worked") : console.log('a new HTML file has been created for you!')

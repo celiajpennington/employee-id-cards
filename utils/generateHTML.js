@@ -1,4 +1,4 @@
-const createTeamCards = team => {
+const generateHTML = (team) => {
 
     const createManager = function(manager) {
         return `<div class="card" style="width: 18rem;">
@@ -77,7 +77,7 @@ module.export = team => {
 </header>
 <body>
   
-${ createTeamCards(team)} 
+${createTeamCards(team)} 
 </body>
 </html>`
 }
