@@ -1,6 +1,7 @@
 ///require classes and inquirer and fs
 
-//package native to node for resolving path
+const team = []
+    //package native to node for resolving path
 const fs = require('fs');
 const inquirer = require('inquirer');
 const Employee = require("./lib/Employee")
@@ -10,7 +11,7 @@ const Manager = require('./lib/Manager');
 const generateHTML = require("./utils/generateHTML")
     //determine current directory and find path to the output folder 
 
-const team = [];
+
 
 
 function newManager() {
@@ -104,7 +105,7 @@ function newEmployee() {
             let engineer = new Engineer(employeeName, employeeId, email, github)
             team.push(engineer);
         }
-        if (response.add == true) { newEmployee(); } else { generateHTML(); }
+        if (response.add == true) { newEmployee(); } else { createHTML(); }
     })
 }
 const createHTML = () => {

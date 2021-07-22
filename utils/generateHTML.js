@@ -1,83 +1,77 @@
-const createTeamCards = (team) => {
-
-    const createManager = function(manager) {
-        return `<div class="card" style="width: 18rem;">
-<div class="card-body">
-  <h4 class=" employeeName card-title">${manager.getName()}</h4>
-  <h5 class=" employeeRole card-text">${manager.getRole()}</h5>
-</div>
-<ul class=" employeeDetails list-group list-group-flush">
-  <li class="list-group-item">${manager.getId()}</li>
-  <li class="list-group-item">${manager.getEmail()}</li>
-  <li class="list-group-item">${manager.getOfficeNumber()}</li>
-</ul>
+const createManager = function(manager) {
+    return `<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h3>Manager</h3></div>
+  <div class="card-body text-dark">
+  <h5 class="card-title">Name: ${manager.name}</h5>
+  <p class="card-text">ID: ${manager.ID}<br> Email: ${manager.email}<br> Office Number: ${manager.officeNumber}</p>
+  </div>
 </div>`
-    }
-
-    const createEngineer = function(engineer) {
-            return `<div class="card" style="width: 18rem;">
-<div class="card-body">
-  <h4 class=" employeeName card-title">${engineer.getName()}</h4>
-  <h5 class=" employeeRole card-text">${engineer.getRole()}</h5>
-</div>
-<ul class=" employeeDetails list-group list-group-flush">
-  <li class="list-group-item">${engineer.getId()}</li>
-  <li class="list-group-item">${engineer.getEmail()}</li>
-  <li class="list-group-item">${engineer.getGithub()}</li>
-</ul>
-</div>`
-        }
-        //do I need to add a href to email to create a link- I think they want to use a mailTo:
-    const createIntern = function(Intern) {
-        return `<div class="card" style="width: 18rem;">
-<div class="card-body">
-  <h4 class=" employeeName card-title">${intern.getName()}</h4>
-  <h5 class=" employeeRole card-text">${intern.getRole()}</h5>
-</div>
-<ul class=" employeeDetails list-group list-group-flush">
-  <li class="list-group-item">${intern.getId()}</li>
-  <li class="list-group-item">${intern.getEmail()}</li>
-  <li class="list-group-item">${intern.getSchool()}</li> 
-</ul>
-</div>`
-    }
-
-
-    const html = [];
-    html.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => createManager(manager))
-    );
-    html.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => createEngineer(engineer))
-        .join("")
-    );
-    html.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => createIntern(intern))
-        .join("")
-    );
-    return html.join("");
 }
 
-module.export = team => {
-    return `
-    <!doctype html>
+const createIntern = function(intern) {
+    return `<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h3>Intern</h3></div>
+  <div class="card-body text-dark">
+  <h5 class="card-title"> Name: ${intern.name}</h5>
+  <p class="card-text"> ID: ${intern.ID}<br> Email: ${intern.email}<br> School: ${intern.school}</p>
+  </div>
+</div>`
+}
+
+const createEngineer = function(engineer) {
+    return `<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h3>Engineer</h3></div>
+  <div class="card-body text-dark">
+  <h5 class="card-title"> Name: ${engineer.name}</h5>
+  <p class="card-text"> ID: ${engineer.ID}<br> Email: ${engineer.email}<br> Github: ${engineer.github}</p>
+  </div>
+</div>`
+}
+
+
+function generateHTML(team) {
+
+    const managerArray = [];
+    const internArray = [];
+    const engineerArray = [];
+
+    for (let i = 0; i < team.length; i++) {
+        let employee = team[i];
+        let role = employee.getRole();
+
+        switch (role) {
+            case "Manager":
+                managerArray.push(createManager(employee))
+                break;
+
+            case "Intern":
+                internArray.push(createIntern(employee))
+                break;
+
+            case "Engineer":
+                engineerArray.push(createEngineer(employee))
+                break;
+        }
+    }
+
+    return `<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href = "./FinalHTML/reset.css" rel="stylesheet">
-    <link href = "./FinalHTML/style.css" rel="stylesheet">
-    <title>Employees</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Employees</title>
+
+  <link rel="stylesheet" href="./output/style.cssh">
 </head>
-<header>
-    <h1>My Team</h1>
-</header>
 <body>
-  
-${createTeamCards(team)} 
+  ${engineerArray.join('')}
+  ${managerArray.join('')}
+  ${internArray.join('')}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>`
 }
+
+module.exports = generateHTML;
