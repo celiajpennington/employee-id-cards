@@ -1,6 +1,6 @@
 /* do some CSS stuff in here */
 
-body {
+/* body {
     background-color: green;
     align-items: center;
     text-align: center;
@@ -8,4 +8,28 @@ body {
     margin-right: 35%;
     margin-top: 50px;
     margin-bottom: 50px;
+} */
+
+.navbar {
+    background-color: red;
+    color: white;
+    margin-bottom: 20px;
+}
+.navbar .h1 {
+    margin-left: 50%;
+    margin-right: 50%;
+    font-size: x-large;
+}
+.card {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    background-color:lightblue;
+}
+.list-group-item {
+    border: thin black solid;
+    border-radius: 10px;
+    background-color: floralwhite;
+    margin: 5px;
 }

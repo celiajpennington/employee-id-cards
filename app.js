@@ -109,7 +109,7 @@ function newEmployee() {
     })
 }
 const createHTML = () => {
-    fs.writeFile("final.html", generateHTML(team), (err) => {
+    fs.writeFile("test8.html", generateHTML(team), (err) => {
         err ? console.log("This has not worked") : console.log('a new HTML file has been created for you!')
     })
 }
