@@ -3,21 +3,24 @@
 ## Table of Contents
 1. [Description](#description)
 2. [Installation](#installation)
-3. [Usage](#usage)
-4. [License](#license)
-5. [Contribution](#contribution)
-6. [Questions](#questions)
+3. [Visuals](#visuals)
+4. [Usage](#usage)
+5. [License](#license)
+6. [Contribution](#contribution)
+7. [Questions](#questions)
 
 ## Description
 Create a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.
 
 ## Installation & Technology
 ``` npm i ``` <br>
-Jest
-Inquirer
-JavaScript
-HTML
-CSS
+Jest <br>
+Inquirer <br>
+JavaScript <br>
+HTML <br>
+CSS <br>
+
+## Visuals
 
 ## Usage
 To generate an HTML webpage, with employee ID cards based on role, through a Node.js command line.
@@ -50,11 +53,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ## Contribution
-Robby Kurle
+Robby Kurle <br>
 Christyn Garcia https://github.com/christyns92
 
 ## Visuals
 
+https://drive.google.com/file/d/1S9OMEkKpCnQldE48UJ6-jXmmkaQH14bq/view?usp=sharing <br>
+
+https://drive.google.com/file/d/14v81ixd3o6kBzlxjxzjMDQ8lxvzoGtTo/view?usp=sharing
+
 ## Questions
 If you have any questions you can reach me at: <br>
-<a href = 'celiajpennington' > celiajpennington </a>
+<a href = 'celiajpennington@gamil.com' > celiajpennington@gmail.com </a>
